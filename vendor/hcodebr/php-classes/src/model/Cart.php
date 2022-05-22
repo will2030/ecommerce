@@ -261,6 +261,7 @@ class Cart extends Model {
 
     }
 
+    
     public static function getMsgError()
 	{
 
@@ -270,14 +271,14 @@ class Cart extends Model {
 
 		return $msg;
 
-	}
+	} 
 
 	public static function clearMsgError()
 	{
 
 		$_SESSION[Cart::SESSION_ERROR] = NULL;
 
-	}
+	} 
 
     public function updateFreight()
     {
@@ -306,9 +307,9 @@ class Cart extends Model {
 		$totals = $this->getProductsTotals();
 
 		$this->setvlsubtotal($totals['vlprice']);
-		$this->setvltotal($totals['vlprice'] + (float)$this->getvlfreight());
+		$this->setvltotal($totals['vlprice'] + $this->getvlfreight());
 
-	}
+	} 
 
 }
 

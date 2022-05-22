@@ -68,7 +68,8 @@ class User extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :LOGIN", array(
+		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = 
+		    :LOGIN", array(
 			":LOGIN"=>$login
 		)); 
 
@@ -326,7 +327,7 @@ class User extends Model {
 
 	}
 
-	/*public static function setError($msg)
+	public static function setError($msg)
 	{
 
 		$_SESSION[User::ERROR] = $msg;
@@ -422,7 +423,7 @@ class User extends Model {
 		]);
 
 	}
-
+/*
 	public function getOrders()
 	{
 
